@@ -1,0 +1,4 @@
+
+set(CN_PROJECT_NAME "prosus-gui")
+set(CN_CURRENCY_DISPLAY_NAME "Prosus")
+set(CN_CURRENCY_TICKER "xPR")
