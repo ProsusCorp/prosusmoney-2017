@@ -29,9 +29,9 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
 
   quint64 numberOfConfirmations = index.data(TransactionsModel::ROLE_NUMBER_OF_CONFIRMATIONS).value<quint64>();
   QString amountText = index.sibling(index.row(), TransactionsModel::COLUMN_AMOUNT).data().toString() + " " +
-    CurrencyAdapter::instance().getCurrencyTicker().toUpper();
+    CurrencyAdapter::instance().getCurrencyTicker();
   QString feeText = CurrencyAdapter::instance().formatAmount(index.data(TransactionsModel::ROLE_FEE).value<quint64>()) + " " +
-    CurrencyAdapter::instance().getCurrencyTicker().toUpper();
+    CurrencyAdapter::instance().getCurrencyTicker();
 
   m_ui->m_detailsBrowser->setHtml(m_detailsTemplate.arg(QString("%1 confirmations").arg(numberOfConfirmations)).
     arg(index.sibling(index.row(), TransactionsModel::COLUMN_DATE).data().toString()).arg(index.sibling(index.row(),

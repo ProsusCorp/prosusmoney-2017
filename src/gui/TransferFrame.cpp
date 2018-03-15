@@ -17,7 +17,7 @@ namespace WalletGui {
 TransferFrame::TransferFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::TransferFrame) {
   m_ui->setupUi(this);
   setAttribute(Qt::WA_DeleteOnClose);
-  m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
+  m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker());
 }
 
 TransferFrame::~TransferFrame() {
