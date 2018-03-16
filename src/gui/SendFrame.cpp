@@ -25,7 +25,7 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &SendFrame::walletActualBalanceUpdated,
     Qt::QueuedConnection);
 
-  m_ui->m_tickerLabel->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
+  m_ui->m_tickerLabel->setText(CurrencyAdapter::instance().getCurrencyTicker());
 }
 
 SendFrame::~SendFrame() {
@@ -106,5 +106,5 @@ void SendFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _er
 void SendFrame::walletActualBalanceUpdated(quint64 _balance) {
   m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
-  
+
 }
