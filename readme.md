@@ -1,1 +1,2 @@
-# www.prosus.money/wallet
+More info...
+# www.prosus.money
